@@ -1,0 +1,165 @@
+You are a senior full-stack engineer.
+
+Build a modern, production-ready web application called **"Movie Night Live"** — a live TV streaming platform using public IPTV streams.
+
+## 🧱 Tech Stack
+
+* Next.js 16+ (App Router)
+* TypeScript
+* Tailwind CSS
+* Zustand (state management)
+* hls.js (for HLS streaming)
+
+## 🎯 Core Features
+
+1. Live TV channels listing page
+2. Channel player page
+3. Search and filtering
+4. Responsive UI (mobile + desktop)
+5. Clean modern dark UI (cinematic style)
+
+---
+
+## 📁 Project Structure
+
+Use this structure:
+
+/app
+/live
+page.tsx
+loading.tsx
+error.tsx
+
+/channel/[id]
+page.tsx
+
+/components
+/player
+video-player.tsx
+
+/channel
+channel-card.tsx
+channel-list.tsx
+category-filter.tsx
+
+/lib
+iptv.ts
+api.ts
+
+/store
+useChannelStore.ts
+
+/types
+channel.ts
+
+---
+
+## 📡 Data Source
+
+Use IPTV-org public API:
+
+* https://iptv-org.github.io/api/channels.json
+* https://iptv-org.github.io/api/streams.json
+
+Fetch and merge channels with streams.
+
+Each channel should include:
+
+* id
+* name
+* logo
+* country
+* category
+* stream url (m3u8)
+
+---
+
+## 🧠 Logic Requirements
+
+### 1. Data Fetching
+
+* Create a utility in `/lib/iptv.ts`
+* Fetch channels and streams
+* Merge them by channel id
+* Return only channels with valid stream URLs
+
+---
+
+### 2. State Management
+
+Use Zustand:
+
+* store channels
+* store selected channel
+* store filters (search, country, category)
+
+---
+
+### 3. /live Page
+
+* Display all channels in a grid
+* Add search input
+* Add filters:
+
+  * country
+  * category
+* Clicking a channel → navigate to `/channel/[id]`
+
+---
+
+### 4. /channel/[id] Page
+
+* Show:
+
+  * video player
+  * channel name
+  * logo
+* Load stream dynamically
+
+---
+
+### 5. Video Player
+
+Use hls.js:
+
+* If browser supports HLS → use native
+* Else → use hls.js fallback
+
+---
+
+## 🎨 UI Design
+
+* Dark theme (black / dark gray)
+* Neon accents (red)
+* Smooth hover animations
+* Rounded cards
+* Clean Netflix-like layout
+
+---
+
+## ⚡ Performance
+
+* Use caching where possible
+* Avoid unnecessary re-renders
+* Lazy load images
+
+---
+
+## 🧩 Extra Features (if possible)
+
+* Favorite channels (localStorage)
+* “Live” badge on channels
+* Skeleton loading states
+* Error handling UI
+
+---
+
+## 🚀 Output Requirements
+
+* Provide full working code
+* Include all files
+* Use clean, readable, production-level code
+* No unnecessary explanations
+* Focus on implementation
+
+Build this as a complete MVP ready to run locally.

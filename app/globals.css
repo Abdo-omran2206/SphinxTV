@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0B0F1A;
+  --foreground: #FFFFFF;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0px, transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(0, 229, 255, 0.04) 0px, transparent 35%),
+    radial-gradient(circle at 50% 90%, rgba(17, 24, 39, 0.6) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* SphinxTV Glass Card */
+.glass-card {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 25px -4px rgba(212, 175, 55, 0.3);
+}
+
+/* Egyptian Gold Gradient Typography */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF6D1 0%, #D4AF37 50%, #B38B1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cyan-text-gradient {
+  background: linear-gradient(135deg, #E0FFFF 0%, #00E5FF 60%, #00B4D8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Modern Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E283C;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
